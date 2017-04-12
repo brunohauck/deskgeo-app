@@ -51,11 +51,11 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         TextView description;
-        TextView status;
+        TextView statusInfo;
         public ViewHolder(View itemView){
             super(itemView);
             //foto = (ImageView) itemView.findViewById(R.id.foto);
-            status = (TextView) itemView.findViewById(R.id.textViewStatus);
+            statusInfo = (TextView) itemView.findViewById(R.id.textViewStatus);
             description = (TextView) itemView.findViewById(R.id.textViewDescription);
             cardView = (CardView) itemView.findViewById(R.id.card_view);
             cardView.setOnClickListener(new View.OnClickListener(){
@@ -72,7 +72,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         final Events msg =  eventList.get(i);
         Log.d("MSG",msg.getDescription());
         feedListRowHolder.description.setText(msg.getDescription().toString());
-        feedListRowHolder.status.setText(msg.getStatus().toString());
+        feedListRowHolder.statusInfo.setText(msg.getStatus().toString());
     }
 
     @Override
