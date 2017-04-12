@@ -20,7 +20,7 @@
         <LinearLayout
             android:id="@+id/top_layout"
             android:layout_width="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_height="match_parent">
 
 
@@ -32,7 +32,7 @@
                 android:alpha="0.8"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/textViewTitle" />
+                android:id="@+id/textViewStatus" />
 
             <TextView
                 android:id="@+id/textViewDescription"
