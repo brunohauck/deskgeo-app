@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mentorandroid.helpdesk_deskgeo.R;
@@ -51,15 +52,18 @@ public class DosAdapter extends RecyclerView.Adapter<DosAdapter.ViewHolder>  {
     class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         TextView mensagem;
+        ImageView img;
         public ViewHolder(View itemView){
             super(itemView);
             //foto = (ImageView) itemView.findViewById(R.id.foto);
             //nome = (TextView) itemView.findViewById(R.id.nome);
             mensagem = (TextView) itemView.findViewById(R.id.mensagem);
             cardView = (CardView) itemView.findViewById(R.id.card_view);
+            img = (ImageView) itemView.findViewById(R.id.imageView4);
             cardView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
+
                     // CallIntent(getAdapterPosition());
                 }
             });
@@ -71,6 +75,11 @@ public class DosAdapter extends RecyclerView.Adapter<DosAdapter.ViewHolder>  {
         final Dos msg =  dosList.get(i);
         Log.d("MSG",msg.getMsgEnviada());
         feedListRowHolder.mensagem.setText(msg.getMsgEnviada().toString());
+
+        if(msg.getMsgEnviada().toString().equals("The traffic is normal")){
+            feedListRowHolder.img.setBackgroundResource(R.drawable.deskgeo);
+        }
+        //qImageView.setBackgroundResource(R.drawable.thumbs_down);
     }
 
     @Override
